@@ -31,7 +31,7 @@ In this version we will have our project setup and database running so we can st
   - seller: you should another Model for the seller and embed the seller inside the ShopItem.
   - genre
 
-<b>For the data types and other validation criterias like required, length, you have to add them yourselves. For the seller Model, you also have to estimate what are the proporties for it.<b>
+<b>For the data types and other validation criterias like required, length, you have to add them yourselves. For the seller Model, you also have to estimate what are the proporties for it.</b>
 - After having the Models done, it is time to create a controllers folder and add `ShopItem` controller file to put our controllers there.
 - Add a request to get all the shop items and return them as a JSON, if no shop item is available return a message to tell the user that.  
   
