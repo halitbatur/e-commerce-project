@@ -8,7 +8,7 @@ Please don't split the code. Write every line of code together. In each group, e
 
 ### Overview
 
-In this project, you will be using Node, Express, MongoDB and Mongoose in order to create an e-commerce backend app.
+In this project, you will be using Node, Express, MongoDB and Mongoose in order to create an e-commerce backend app. This app will have 2 types of users: admins of the shop and customers.
 
 We will work through this project in versions. these versions will be as following:
 1. E-commerce admin features
