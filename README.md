@@ -32,7 +32,8 @@ In this version we will make sure everything is setup and working from the datab
   - image
   - price
   - description
-  - availableCount 
+  - availableCount
+  - genre or category
 
 Now, after setting up the model, let's start working on the requests.
 
@@ -40,4 +41,5 @@ _Note: admin routes start with `/admin`._
 
 - The admin should be able to add new shop items.
 - The admin should be able to update the details of a shop item, such as description, price, available count, etc.
-- The admin can delete one or more items from the items list.
+- The admin should be able to delete one or more items from the items list.
+- The admin should be able to search for shop items based on different properties.
