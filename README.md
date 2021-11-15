@@ -43,3 +43,18 @@ _Note: admin routes start with `/admin`._
 - The admin should be able to update the details of a shop item, such as description, price, available count, etc.
 - The admin should be able to delete one or more items from the items list.
 - The admin should be able to search for shop items based on different properties.
+
+#### Version 2 Requirements
+Having the project running and admin being able to play around with the shop items, it is time to add the customer features.
+
+customer routes start with _`/customer`_.
+
+Note: continue working on the same project, don't create a new repo or project and copy all your work from v1 to the new project, work on the same project from v1.
+
+Requirement are:
+- Customer is able to get all shop items and filter according to category and price range (for example, items price that range from 10$ to 50$).
+- Customer should be able to search for items.
+- Customer can buy an item, and each time a customer buys an item, the `availableCount` should be decreased by the amount the customer bought from that item. 
+
+make sure you check there are enough or remaining items in the inventory before ending the purchase.
+- Customer should be able to get the information of a single item.
