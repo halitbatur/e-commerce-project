@@ -60,7 +60,7 @@ For this operation, you will need to define 2 new models one for the customer an
 
 _Note: for the customer id, you can create a local array of customers, each customer can have id, name, gender, ..._
 
-- After the customer had added items to their cart, they will need to checkout and order, so create an request to the endpoint `/checkout` where you will need to calculate the bill for all the items in the cart and create an `order` object with all order items and bill total and return it to the customer. The cart for that custoemr should be empty after they order.
+- After the customer had added items to their cart, they will need to checkout and order, so create a request to the endpoint `/checkout` where you will need to calculate the bill for all the items in the cart and create an `order` object with all order items and bill total and return it to the customer. The cart for that custoemr should be empty after they order.
 
 You will need to define another new model for the customer orders, let's call it order, we will have all the customer orders in there after they checkout.
 - Customer should be able to get the information of a single item.
