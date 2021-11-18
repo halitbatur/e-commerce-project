@@ -54,7 +54,13 @@ Note: continue working on the same project, don't create a new repo or project a
 Requirement are:
 - Customer is able to get all shop items and filter according to category and price range (for example, items price that range from 10$ to 50$).
 - Customer should be able to search for items.
-- Customer can buy an item, and each time a customer buys an item, the `availableCount` should be decreased by the amount the customer bought from that item. 
+- A customer is able to add an item to their cart, by sending a request to `/cart` with the customer ID, item ID and countity requested. Make sure you check there are enough or remaining items in the inventory before adding to the cart.
 
-make sure you check there are enough or remaining items in the inventory before ending the purchase.
+For this operation, you will need to define 2 new models one for the customer and another one for the cart, the cart will be embedded or referenced inside the customer model.
+
+_Note: for the customer id, you can create a local array of customers, each customer can have id, name, gender, ..._
+
+- After the customer had added items to their cart, they will need to checkout and order, so create an request to the endpoint `/checkout` where you will need to calculate the bill for all the items in the cart and create an `order` object with all order items and bill total and return it to the customer. The cart for that custoemr should be empty after they order.
+
+You will need to define another new model for the customer orders, let's call it order, we will have all the customer orders in there after they checkout.
 - Customer should be able to get the information of a single item.
