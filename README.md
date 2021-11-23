@@ -11,6 +11,7 @@ Please don't split the code. Write every line of code together. In each group, e
 In this project, you will be using Node, Express, MongoDB and Mongoose in order to create an e-commerce backend app. This app will have 2 types of users: admins of the shop and customers.
 
 We will work through this project in versions. these versions will be as following:
+
 1. E-commerce admin features
 2. Customer features
 3. Authentication
@@ -26,7 +27,9 @@ The requirements will update in each version and you will add to the work you di
 **Attention**: All types of validation and error handling should be taken in-consideration in all requests.
 
 #### Version 1 Requirements
+
 In this version we will make sure everything is setup and working from the database to Express server and their connection. Then we will start working on all the admin features and requirements as following:
+
 - First of all, you need to define your `shop-item` schema, it should at least have these fields (the data types and other validation criterias will be left for you to decide on):
   - title
   - image
@@ -45,6 +48,7 @@ _Note: admin routes start with `/admin`._
 - The admin should be able to search for shop items based on different properties.
 
 #### Version 2 Requirements
+
 Having the project running and admin being able to play around with the shop items, it is time to add the customer features.
 
 Customer routes start with _`/customer`_.
@@ -52,6 +56,7 @@ Customer routes start with _`/customer`_.
 **Note**: _Continue working on the same project. Please don't create a new repo or project and copy all your work from v1 to the new project. Work on the same codebase from v1._
 
 Requirements are:
+
 - Customer is able to get all shop items and filter according to category and price range (for example, items that range in price from 10$ to 50$).
 - Customer should be able to search for items.
 - A customer is able to add an item to their cart, by sending a request to `/cart` with the customer ID, item ID and quantity requested. Make sure you check there are enough or remaining items in the inventory before adding to the cart. Adding to cart should also decrement the quantity in the shop items inventory.
@@ -59,8 +64,54 @@ Requirements are:
 - Customer should be able to get the information of a single item.
 
 Model requirements:
+
 - For these operations, you will need to define a new model for the `customer`.
 - And another one for the `cart`. The `cart` can be embedded or referenced inside the `customer` model.
 - You will also need to define another new model for the customer orders, let's call it `order`. We will have all the customer orders in there after they checkout.
 
 **Note**: _You can create a few dummy records on your customers collection to test out your API routes. Once we implement authentication in an upcoming version, we will use the customer data created after signup/signin. Each customer can have id, name, gender, ..._
+
+#### Version 2 Requirements
+
+We've done an amazing work so far, now it's time to work on the website authintication and authorization so admins can sign in and have thier own functionalities and same for the customers.
+
+**Note**: _Continue working on the same project. Please don't create a new repo or project and copy all your work from v1 and v2 to the new project. Work on the same codebase of v1 and v2._
+
+#### Requirements:
+
+- Admin Authentication
+
+  - The admin should be able to sign in using an email and a password through the `/admin/signin` endpoint.
+  - The admin should be able to sign out through the `/admin/signout` endpoint.
+  - All `/admin` routes should be protected by the `/admin/signin` endpoint.
+  - The admin should remain signed in and have access to the admin routs until they sign out.
+  - If an admin is not signed in, they should not be able to access any of the admin routes.
+  - Only and admin can create a new admin account from the `/amdin/new-admin` endpoint.
+  - The admin should be able to fetch all the orders information from the `/admin/orders` endpoint.
+  - The admin should be able to fetch all the customers information from the `/admin/customers` endpoint.
+
+- Customer Authentication
+
+  - The customer should be able to sign up using an email and a password or a social media account of your choice i.e. google, facebook, ...etc, through the `/customer/signup` endpoint.
+  - The customer should be able to sign in using an email and a password or a social media account of your choice i.e. google, facebook, ...etc, through the `/customer/signin` endpoint.
+  - The customer should be able to sign out through the `/customer/signout` endpoint.
+  - All `/customer` routes should be protected by the `/customer/signin` endpoint.
+  - The customer should remain signed in and have access to the customer routes until they sign out.
+  - If a customer is not signed in, they should not be able to access any of the customer routes.
+  - The cusotmer should be able to fetch all thier previous orders information from the `/customer/:id/orders` endpoint.
+  - The customer shoule be able to fecth and update thier profile information through the `/customer/:id/profile` endpoint.
+  - The customer shoule be able to update thier cart and do CRUD operations on it i.e. add items, remove items, update items by incrementing and decrementing the quantity, ...etc. through the `/customer/:id/cart` endpoint.
+
+#### Optional BONUS Requirements:
+
+- Build the views of yur app using the `ejs` template engine.
+- The views should include the following:
+  - The prodcusts view
+  - The single product view
+  - The cart view
+  - The checkout view
+  - The signup view
+  - The signin view
+  - The signout view
+  - The new-admin view
+  - The customer profile view
