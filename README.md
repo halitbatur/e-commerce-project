@@ -71,9 +71,9 @@ Model requirements:
 
 **Note**: _You can create a few dummy records on your customers collection to test out your API routes. Once we implement authentication in an upcoming version, we will use the customer data created after signup/signin. Each customer can have id, name, gender, ..._
 
-#### Version 2 Requirements
+#### Version 3 Requirements
 
-We've done an amazing work so far, now it's time to work on the website authintication and authorization so admins can sign in and have thier own functionalities and same for the customers.
+We've done an amazing job so far, now it's time to work on the website authentication and authorization so admins can sign in and have their own functionalities and the same for the customers.
 
 **Note**: _Continue working on the same project. Please don't create a new repo or project and copy all your work from v1 and v2 to the new project. Work on the same codebase of v1 and v2._
 
@@ -83,10 +83,9 @@ We've done an amazing work so far, now it's time to work on the website authinti
 
   - The admin should be able to sign in using an email and a password through the `/admin/signin` endpoint.
   - The admin should be able to sign out through the `/admin/signout` endpoint.
-  - All `/admin` routes should be protected by the `/admin/signin` endpoint.
-  - The admin should remain signed in and have access to the admin routs until they sign out.
-  - If an admin is not signed in, they should not be able to access any of the admin routes.
-  - Only and admin can create a new admin account from the `/amdin/new-admin` endpoint.
+  - Only admins must be authorized to access the admin endpoints, which means that you must check if the current user is an admin and is signed in.
+  - The admin should remain signed in and have access to the admin routes until they sign out.
+  - Only an admin can create a new admin account from the `/amdin/new-admin` endpoint.
   - The admin should be able to fetch all the orders information from the `/admin/orders` endpoint.
   - The admin should be able to fetch all the customers information from the `/admin/customers` endpoint.
 
@@ -95,23 +94,13 @@ We've done an amazing work so far, now it's time to work on the website authinti
   - The customer should be able to sign up using an email and a password or a social media account of your choice i.e. google, facebook, ...etc, through the `/customer/signup` endpoint.
   - The customer should be able to sign in using an email and a password or a social media account of your choice i.e. google, facebook, ...etc, through the `/customer/signin` endpoint.
   - The customer should be able to sign out through the `/customer/signout` endpoint.
-  - All `/customer` routes should be protected by the `/customer/signin` endpoint.
+  - Only customers must be authorized to access the customer endpoints, which means that you must check if the current user is a customer and is signed in.
   - The customer should remain signed in and have access to the customer routes until they sign out.
-  - If a customer is not signed in, they should not be able to access any of the customer routes.
-  - The cusotmer should be able to fetch all thier previous orders information from the `/customer/:id/orders` endpoint.
-  - The customer shoule be able to fecth and update thier profile information through the `/customer/:id/profile` endpoint.
-  - The customer shoule be able to update thier cart and do CRUD operations on it i.e. add items, remove items, update items by incrementing and decrementing the quantity, ...etc. through the `/customer/:id/cart` endpoint.
+  - The customer should be able to fetch all their previous orders information from the `/customer/orders` endpoint.
+  - The customer should be able to fetch and update their profile information through the `/customer/profile` endpoint.
+  - The customer should be able to update their cart and do CRUD operations on it i.e. add items, remove items, update items by incrementing and decrementing the quantity, ...etc. through the `/customer/cart` endpoint.
 
 #### Optional BONUS Requirements:
 
-- Build the views of yur app using the `ejs` template engine.
-- The views should include the following:
-  - The prodcusts view
-  - The single product view
-  - The cart view
-  - The checkout view
-  - The signup view
-  - The signin view
-  - The signout view
-  - The new-admin view
-  - The customer profile view
+- Build the views of your app using `ejs` template engine.
+- The views should include the main functionalities of the app.
