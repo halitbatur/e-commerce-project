@@ -75,32 +75,39 @@ Model requirements:
 
 We've done an amazing job so far, now it's time to work on the website authentication and authorization so admins can sign in and have their own functionalities and the same for the customers.
 
-**Note**: _Continue working on the same project. Please don't create a new repo or project and copy all your work from v1 and v2 to the new project. Work on the same codebase of v1 and v2._
-
 #### Requirements:
 
-- Admin Authentication
+- **Admin Authentication:**
 
-  - The admin should be able to sign in using an email and a password through the `/admin/signin` endpoint.
-  - The admin should be able to sign out through the `/admin/signout` endpoint.
-  - Only admins must be authorized to access the admin endpoints, which means that you must check if the current user is an admin and is signed in.
-  - The admin should remain signed in and have access to the admin routes until they sign out.
-  - Only an admin can create a new admin account from the `/amdin/new-admin` endpoint.
-  - The admin should be able to fetch all the orders information from the `/admin/orders` endpoint.
-  - The admin should be able to fetch all the customers information from the `/admin/customers` endpoint.
+  - **Admin signing:**
+    - The admin should be able to sign in using an email and a password through the `/admin/signin` endpoint.
+    - The admin should remain signed in and have access to the admin routes until they sign out.
+  - **Admin signout:** The admin should be able to sign out through the `/admin/signout` endpoint.
+  - **Admin authorization:** Only admins must be authorized to access the admin endpoints, which means that you must check if the current user is an admin and is signed in.
+  - **Admin functionalities:**
+    - The admin should be able to fetch all the orders information from the `/admin/orders` endpoint.
+    - The admin should be able to fetch all the customers information from the `/admin/customers` endpoint.
+  - **New admin account:** Only an admin can create a new admin account from the `/admin/new-admin` endpoint.
 
-- Customer Authentication
+- **Customer Authentication:**
 
-  - The customer should be able to sign up using an email and a password or a social media account of your choice i.e. google, facebook, ...etc, through the `/customer/signup` endpoint.
-  - The customer should be able to sign in using an email and a password or a social media account of your choice i.e. google, facebook, ...etc, through the `/customer/signin` endpoint.
-  - The customer should be able to sign out through the `/customer/signout` endpoint.
-  - Only customers must be authorized to access the customer endpoints, which means that you must check if the current user is a customer and is signed in.
-  - The customer should remain signed in and have access to the customer routes until they sign out.
-  - The customer should be able to fetch all their previous orders information from the `/customer/orders` endpoint.
-  - The customer should be able to fetch and update their profile information through the `/customer/profile` endpoint.
-  - The customer should be able to update their cart and do CRUD operations on it i.e. add items, remove items, update items by incrementing and decrementing the quantity, ...etc. through the `/customer/cart` endpoint.
+  - **Customer signup:** The customer should be able to sign up using an email and a password or a social media account of your choice i.e. google, facebook, ...etc, through the `/customer/signup` endpoint.
+  - **Customer signin:**
+    - The customer should be able to sign in using an email and a password or a social media account of your choice i.e. google, facebook, ...etc, through the `/customer/signin` endpoint.
+    - The customer should remain signed in and have access to the customer routes until they sign out.
+  - **Customer signout:** The customer should be able to sign out through the `/customer/signout` endpoint.
+  - **Customer authorization:** Only customers must be authorized to access the customer endpoints, which means that you must check if the current user is a customer and is signed in.
+  - **Customer Functionalities:**
+
+    - The customer should be able to fetch all their previous orders information from the `/customer/orders` endpoint.
+    - The customer should be able to fetch and update their profile information through the `/customer/profile` endpoint.
+    - The customer should be able to update their cart and do CRUD operations on it i.e. add items, remove items, update items by incrementing and decrementing the quantity, ...etc. through the `/customer/cart` endpoint.
+
+    **NOTE:** You must apply authentication check to all previous admin and customer routes created in v1 and v2. This means that you will remove customer ID from request body of previous routes and instead the customer must be identified using the authentication you have setup.
 
 #### Optional BONUS Requirements:
 
+Our focus will always be on backend first, so these requirements are optional and it is alright if you don't implement them. But if you have an interest in practicing frontend through server-side rendering then we recommend you should try to build some views for your application.
+
 - Build the views of your app using `ejs` template engine.
-- The views should include the main functionalities of the app.
+- The views should include the main functionalities of the app for the customer. For example, signup, signin and signout views, all products view, single product view, cart view and checkout view
