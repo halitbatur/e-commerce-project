@@ -79,7 +79,7 @@ We've done an amazing job so far, now it's time to work on the website authentic
 
 - **Admin Authentication:**
 
-  - **Admin signing:**
+  - **Admin signin:**
     - The admin should be able to sign in using an email and a password through the `/admin/signin` endpoint.
     - The admin should remain signed in and have access to the admin routes until they sign out.
   - **Admin signout:** The admin should be able to sign out through the `/admin/signout` endpoint.
